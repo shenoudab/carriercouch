@@ -1,3 +1,5 @@
+require 'carrierwave'
+
 module CarrierWave
   module Uploader
     module Configuration

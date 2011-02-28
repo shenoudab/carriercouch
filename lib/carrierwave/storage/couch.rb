@@ -1,11 +1,12 @@
 # encoding: utf-8
 
+require 'carrierwave'
 require 'couchrest'
 require 'couchrest_model'
 
 module CarrierWave
   module Storage
-    
+
     ##
     # Couch storage stores file to the Couchdb (surprising, no?). There's really not much
     # to it.
