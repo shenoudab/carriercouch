@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "carriercouch"
   s.version     = Carriercouch::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Shenouda Bertel"]
+  s.email       = ["sbertel@arpuplus.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Carrierwave Uploader for CouchDB with CouchrestModel}
+  s.description = %q{Carrierwave Uploader for CouchDB with CouchrestModel}
 
   s.rubyforge_project = "carriercouch"
 
