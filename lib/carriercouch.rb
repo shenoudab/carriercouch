@@ -1,9 +1,9 @@
 require 'carrierwave'
-require 'carrierwave/orm/couchrest_model'
+require 'carriercouch/carrierwave/orm/couchrest_model'
 
 module CarrierWave
   module Storage
-    autoload :Couch, 'carrierwave/storage/couch'
+    autoload :Couch, 'carriercouch/carrierwave/storage/couch'
   end
 end
 
