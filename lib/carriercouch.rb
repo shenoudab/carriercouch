@@ -1,0 +1,3 @@
+module Carriercouch
+  # Your code goes here...
+end
