@@ -3,8 +3,13 @@ require 'carrierwave/orm/couchrest_model'
 require 'carrierwave/storage/couch'
 require 'carrierwave/uploader/configuration'
 
-module CarrierWave
-  module Storage
-    autoload :Couch, 'carrierwave/storage/couch'
-  end
+#module CarrierWave
+#  module Storage
+#    autoload :Couch, 'carrierwave/storage/couch'
+#  end
+#end
+
+CarrierWave.configure do |config|
+  puts "Couch Storage"
+  config.storage_engines[:couch] = 'CarrierWave::Storage::Couch'
 end

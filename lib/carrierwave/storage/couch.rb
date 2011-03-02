@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-require 'carrierwave'
 require 'couchrest'
 require 'couchrest_model'
 
