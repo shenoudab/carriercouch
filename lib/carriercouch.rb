@@ -1,7 +1,7 @@
 require 'carrierwave'
 require 'carriercouch/orm/couchrest_model'
 require 'carriercouch/storage/couch'
-require 'carriercouch/uploader/configuration'
+#require 'carriercouch/uploader/configuration'
 
 #module CarrierWave
 #  module Storage
