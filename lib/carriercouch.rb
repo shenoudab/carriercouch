@@ -1,7 +1,7 @@
 require 'carrierwave'
-require 'carrierwave/orm/couchrest_model'
-require 'carrierwave/storage/couch'
-require 'carrierwave/uploader/configuration'
+require 'carriercouch/orm/couchrest_model'
+require 'carriercouch/storage/couch'
+require 'carriercouch/uploader/configuration'
 
 #module CarrierWave
 #  module Storage
@@ -10,6 +10,9 @@ require 'carrierwave/uploader/configuration'
 #end
 
 CarrierWave.configure do |config|
-  puts "Couch Storage"
   config.storage_engines[:couch] = 'CarrierWave::Storage::Couch'
+end
+
+module Carriercouch
+  # Your code goes here...
 end

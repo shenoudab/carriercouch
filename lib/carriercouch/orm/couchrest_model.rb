@@ -22,7 +22,7 @@ module CarrierWave
 
       validates_integrity_of  column if uploader_option(column.to_sym, :validate_integrity)
       validates_processing_of column if uploader_option(column.to_sym, :validate_processing)
-
+      
       after_save "store_#{column}!".to_sym
       before_save "write_#{column}_identifier".to_sym
       after_destroy "remove_#{column}!".to_sym
