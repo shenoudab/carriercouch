@@ -14,7 +14,6 @@ module CarrierWave
         add_config :couch_access_url
 
         configure do |config|
-          config.permissions = 0644
           config.storage_engines = {
             :couch => "CarrierWave::Storage::Couch"
           }
