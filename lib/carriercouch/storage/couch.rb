@@ -80,7 +80,7 @@ module CarrierWave
         # [String] content's url
         #
         def url
-          @uploader.couch_connection + "/" + @uploader.couch_database + "/" + model.id + "/" + @path
+          "http://" + @uploader.couch_host + ":" + @uploader.couch_port + "/" + @uploader.couch_database + "/" + model.id + "/" + @path
         end
 
         def store(file)
