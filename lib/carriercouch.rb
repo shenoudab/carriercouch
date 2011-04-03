@@ -12,6 +12,8 @@ CarrierWave::Uploader::Base.add_config :couch_access_url
 
 CarrierWave.configure do |config|
   config.storage_engines[:couch] = 'CarrierWave::Storage::Couch'
+  config.store_dir = ''
+  config.cache_dir = 'tmp'
   config.couch_host = 'localhost'
   config.couch_port = '5984'
 end

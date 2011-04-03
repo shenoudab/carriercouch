@@ -49,7 +49,7 @@ module CarrierWave
         # [String] A path
         #
         def path
-          nil
+          @path
         end
 
         ##
@@ -80,12 +80,12 @@ module CarrierWave
         # [String] content's url
         #
         def url
-          "http://" + @uploader.couch_host + ":" + @uploader.couch_port + "/" + @uploader.couch_database + "/" + model.id + "/" + @path
+          ["http://" + @uploader.couch_host + ":" + @uploader.couch_port, model.database.name , model.id, @path].join("/")
         end
 
         def store(file)
           content_type ||= file.content_type # this might cause problems if content type changes between read and upload (unlikely)
-          model.put_attachment(file.filename, file.read, {:content_type => content_type})
+          model.put_attachment(path.sub(/\//, ''), file.read, {:content_type => content_type})
         end
 
         def content_type
@@ -124,7 +124,7 @@ module CarrierWave
       # [CarrierWave::Storage::Couch::File] a couch file
       #
       def store!(file)
-        f = CarrierWave::Storage::Couch::File.new(uploader, '')
+        f = CarrierWave::Storage::Couch::File.new(uploader, uploader.store_path)
         f.store(file)
         f
       end
@@ -141,7 +141,7 @@ module CarrierWave
       # [CarrierWave::Storage::Couch::File] a couch file
       #
       def retrieve!(identifier)
-        CarrierWave::Storage::Couch::File.new(uploader, identifier)
+        CarrierWave::Storage::Couch::File.new(uploader, uploader.store_path(identifier))
       end
 
     end # Couch
